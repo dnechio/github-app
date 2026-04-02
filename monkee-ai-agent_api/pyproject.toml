@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "monkee-ai-agent-api"
+version = "2.0.0"
+description = "Criminal Player AI v2.0 — Backend API"
+authors = ["Monkee Labs"]
+python = "^3.12"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.0"
+uvicorn = {extras = ["standard"], version = "^0.32.0"}
+agno = "^1.0.0"
+pydantic = "^2.9.0"
+pydantic-settings = "^2.5.0"
+motor = "^3.6.0"
+redis = "^5.2.0"
+boto3 = "^1.35.0"
+openai = "^1.54.0"
+anthropic = "^0.39.0"
+qdrant-client = "^1.12.0"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-multipart = "^0.0.17"
+loguru = "^0.7.2"
+httpx = "^0.28.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.0"
+pytest-asyncio = "^0.24.0"
+pytest-cov = "^6.0.0"
+httpx = "^0.28.0"
+ruff = "^0.7.0"
+mypy = "^1.13.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
